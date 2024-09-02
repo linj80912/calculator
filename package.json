@@ -1,0 +1,47 @@
+{
+  "name": "calculator-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "package": "electron-builder --dir",
+    "dist": "electron-builder --win --linux"
+  },
+  "keywords": [],
+  "author": "Chun-Ming Lin",
+  "license": "MIT",
+  "description": "A simple calculator app",
+  "devDependencies": {
+    "electron": "^32.0.1",
+    "electron-builder": "^24.13.3",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "com.linj80912.electronapp",
+    "productName": "calculator-app",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "assets/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icons/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icons/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icons/png"
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^6.2.1"
+  }
+}
